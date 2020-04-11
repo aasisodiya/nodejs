@@ -387,7 +387,7 @@ finally {
 |`m`|Perform multiline matching|
 |`[abc]`|Find any of the characters between the brackets|
 |`[0-9]`|Find any of the digits between the brackets|
-|`(x|y)`|Find any of the alternatives separated with \||
+|`(x\|y)`|Find any of the alternatives separated with \||
 |`\d`|Find a digit|
 |`\s`|Find a whitespace character|
 |`\b`|Find a match at the beginning of a word like this: \bWORD, or at the end of a word like this: WORD\b|
