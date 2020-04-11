@@ -571,7 +571,7 @@ Math.max.apply(null, array);
 **splice()** - With clever parameter setting, you can use splice() to remove elements without leaving "holes" in the array
 
 **Syntax**: `array.splice(index, howmany, item1, ....., itemX)`
-|Parameter Values|Parameter	Description|
+|Parameter Values|Parameter  Description|
 |-|-|
 |index|Required. An integer that specifies at what position to add/remove items, Use negative values to specify the position from the end of the array
 |howmany|Optional. The number of items to be removed. If set to 0, no items will be removed|
@@ -956,6 +956,290 @@ xhttp.onreadystatechange = function() {
 ```
 
 > jQuery is a JavaScript Library.
+
+**Functions in JavaScript** Examples
+
+```js
+function functionName(){ /*function body*/ }
+function functionName(x,y){ return x+y; }
+```
+
+**Immediately Invoked Function Expression** (aka IIFE)
+
+```js
+(function(n){/*function body*/})(n);
+```
+
+**Question:** What happens if function name is repeated?
+**Answer:** Last function of similar name is executed.
+
+**Method Chaining** - Method Chaining works in below case only if methodOne() and methodTwo() returns something to call next function upon.
+
+```js
+Object.methodOne().methodTwo().methodThree();
+```
+
+**Check if JS is disabled** - Can be done in HTML
+
+```html
+<script>/*some javascript*/</script>
+<noscript>/*for when javascript is diabled*/</noscript>
+```
+
+**Direct Instance of an Object** Example
+
+```js
+var personObj1 = new Object();
+personObj1.id = 8;
+personObj1.name = "Akash";
+personObj1.getData = function(){
+  return this.id + " " + this.name;
+}
+```
+
+**Empty Object** Example
+
+```js
+var personObj2 = {};
+```
+
+**Object Literal** Example
+
+```js
+var personObj3 = {
+  id:1,
+  name:"Aditya",
+  getData:function(){
+    return this.id + " " + this.name;
+  }
+}
+```
+
+**Using Template** Example
+
+```js
+function personObj(id,name){
+  this.id=id;
+  this.name=name;
+  this.getData = function(){
+    return this.id + " " + this.name;
+  }
+}
+personObj4 = new personObj(1,"Aryan");
+```
+
+**Deleting Property** Example
+
+```js
+delete personObj4.name; 
+```
+
+**Define Property** - Object.defineProperty() - method defines a new property directly on an object or modifies an existing property on an object and return the object.
+
+```js
+Object.defineProperty(man, 'species', {
+  value: 'Human Being',
+  writable: false,
+  configurable: false,
+  enumerable: true
+});
+```
+
+**Constructor Level Function** Example
+
+```js
+function Employee(r){
+this.role =r;
+this.display = function()
+{
+  alert('CTOR Level '+this.role);
+}
+}
+```
+
+**Prototype Level Function** Example
+
+```js
+Employee.prototype.display = function(){
+  alert("Prototype Level "+this.role);
+}
+```
+
+**Object Level Function** Example
+
+```js
+emp1.display = function(){
+  alert('Object Level '+this.role);
+}
+```
+
+**Abstraction and Encapsulation** Example
+
+```js
+function Person(){
+this.Id = 100;
+this.hobbies = ['Music','Cricket'];
+// private data member
+var name="Default";
+// private method
+var privateMethod = function(){
+  console.log("Calling Private Method!");
+}
+// Priviledged Method
+this.getInfo = function(){
+  privateMethod();
+  return this.Id+' '+name;
+}
+Person.population++;
+}
+```
+
+**Static Property** Example
+
+```js
+Person.population = 0;
+```
+
+**Prototype Property** - Only Constructor has prototype property and not the instances. Prototype property can also be used by its object unlike static which can only be used by Class
+
+```js
+Person.prototype.hasBrain = true;
+```
+
+**Inheritance using Prototype Chaining** Example
+
+```js
+Child.prototype = new Parent('Mother');
+Child.prototype.constructor = Child;
+```
+
+**Limitations** for Prototype Chaining
+
+1. Arguments can't be passed to the super/base class data member while creating sub/derived class object.
+
+**Inheritance using classical Inheritance** Example
+
+```js
+function Child(rel){
+  Parent.call(this,rel);// Inheritance
+}
+```
+
+**Limitations** for classical Inheritance
+
+1. No Function reuse - inmemory no reuse
+2. Child can't access methods defined at parent's prototype level
+3. Pseudoclassical Inheritance - Combination of prototype chaining and classical inheritance
+
+```js
+// Human - base/super class
+// Student - derived/sub class
+
+function Human(name){
+  this.name = name;
+}
+
+Human.prototype.introduction = function(){
+  alert('Hi, I am '+this.name);
+}
+// Prototype Chaining
+Student.prototype = new Human();
+Student.prototype.constructor = Student;
+
+function Student(nm,college,courses){
+  Human.call(this,nm);// Classical Inheritance
+  this.college = college;
+  this.courses = courses;
+}
+
+Student.prototype.introduction = function(){
+  alert('Hi, I am '+this.name+
+      ', I am a student of '+this.college+
+      ', I study '+this.courses);
+}
+Student.prototype.takeExams = function(){
+  alert('This is Exam time!');
+}
+```
+
+**Polymorphism** Example
+
+```js
+function letMeIntroduce(obj){
+  obj.introduction();// polymorphism
+}
+```
+
+**With closure** Example
+
+```js
+var getHits = (function () {
+  var hits = 0;// initialized to 0
+  function addHits() { // lexical scope
+    hits++;
+    return hits;
+  }
+  return addHits;
+})();
+// closure can retain the environment of the outer function.
+```
+
+**[Module Pattern](https://levelup.gitconnected.com/data-hiding-with-javascript-module-pattern-62b71520bddd?gi=b0bd4624312e)** The Module Pattern is one of the important patterns in JavaScript. It is a commonly used Design Pattern which is used to wrap a set of variables and functions together in a single scope. It is used to define objects and specify the variables and the functions that can be accessed from outside the scope of the function. We expose certain properties and function as public and can also restrict the scope of properties and functions within the object itself, making them private. This means that those variables cannot be accessed outside the scope of the function. We can achieve data hiding an abstraction using this pattern in the JavaScript.
+
+```js
+var empModule = (function(){
+var empList = [];
+return {
+  add:function(e){
+    empList.push(e);
+  },
+  show:function(){
+    for(var index in empList){
+      console.log(empList[index]);
+    }
+  }
+}
+})();// IIFE
+```
+
+### Old Way and New Way of Creating Class
+
+**Old Way** Example
+
+```js
+function personObj(id,name){
+  this.id=id;
+  this.name=name;
+  this.getData = function(){
+    return this.id + " " + this.name;
+  }
+}
+```
+
+**New Way** Example
+
+```js
+class Car {
+  constructor(brand) {
+    this.carname = brand;
+  }
+  methodName() {
+      return;
+  }
+  static staticMethodName() {
+      return;
+  }
+  present() {
+    return 'I have a ' + this.carname;
+  }
+  get cnam() {
+    return this.carname;
+  }
+  set cnam(x) {
+    this.carname = x;
+  }
+}
+```
 
 ## NodeJS Related Points
 
