@@ -232,8 +232,6 @@ person.lang = "en";
 document.getElementById("demo").innerHTML = person.lang;
 ```
 
-?????????????????????????continue from here
-
 **Object.defineProperty()** - Object.defineProperty() is a new Object method in ES5.
 It lets you define an object property and/or change a property's value and/or metadata.
 Example
