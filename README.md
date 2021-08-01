@@ -8,3 +8,4 @@
 |Date|Content Link|Description|
 |-|-|-|
 |16-June-2021|[Node Commands List](https://aasisodiya.github.io/nodejs/notes/node-commands)|List of frequently used commands list|
+|02-August-2021|[Node Commands List](https://aasisodiya.github.io/nodejs/notes/scripts/teams)|Code to keep you alive!|
