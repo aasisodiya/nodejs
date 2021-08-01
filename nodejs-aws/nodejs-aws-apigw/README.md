@@ -1,5 +1,15 @@
 # AWS API Gateway Response Handling
 
+- [AWS API Gateway Response Handling](#aws-api-gateway-response-handling)
+  - [Responses in APIGW](#responses-in-apigw)
+    - [Basic Code](#basic-code)
+    - [Adding some headers in Lambda Response](#adding-some-headers-in-lambda-response)
+    - [JSON as Content-Type](#json-as-content-type)
+    - [Adding Random Stuff to Response Body](#adding-random-stuff-to-response-body)
+    - [Inserting JSON body directly in Response's Body Parameter](#inserting-json-body-directly-in-responses-body-parameter)
+  - [Settings in API Gateway](#settings-in-api-gateway)
+  - [Some Question to Look Into Later](#some-question-to-look-into-later)
+
 ## Responses in APIGW
 
 Below are some examples of how the APIGW settings applies on different responses. (Its just for personal reference, and also data is not fullproof)

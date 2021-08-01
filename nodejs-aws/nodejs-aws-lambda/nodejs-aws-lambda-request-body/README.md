@@ -1,5 +1,11 @@
 # The Request Body for Different Lambda Cases
 
+- [The Request Body for Different Lambda Cases](#the-request-body-for-different-lambda-cases)
+  - [Request Body with default API Gateway Settings](#request-body-with-default-api-gateway-settings)
+  - [Request Body With `Use Lambda Proxy integration` Option Disabled](#request-body-with-use-lambda-proxy-integration-option-disabled)
+  - [An Observation](#an-observation)
+  - [Reference](#reference)
+
 Below all examples are based on below given code snippet
 
 ```js
