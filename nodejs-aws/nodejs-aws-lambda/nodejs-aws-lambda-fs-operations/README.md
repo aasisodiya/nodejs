@@ -1,5 +1,10 @@
 # Using fs Library in Lambda
 
+- [Using fs Library in Lambda](#using-fs-library-in-lambda)
+  - [Documenting the issues I faced while using fs library in lambda](#documenting-the-issues-i-faced-while-using-fs-library-in-lambda)
+    - [Reading any file in lambda](#reading-any-file-in-lambda)
+  - [Reference](#reference)
+
 ## Documenting the issues I faced while using fs library in lambda
 
 Here I have considered below template as reference for all my use cases below, `// Your Code Here` is the part that I will be referring to here on forward

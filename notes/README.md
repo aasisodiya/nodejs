@@ -1,5 +1,12 @@
 # Learning Points From Different Tutorials and Online Sources
 
+- [Learning Points From Different Tutorials and Online Sources](#learning-points-from-different-tutorials-and-online-sources)
+  - [JavaScript Notes](#javascript-notes)
+    - [Array Operations](#array-operations)
+    - [Counter Dielema Solution](#counter-dielema-solution)
+    - [Old Way and New Way of Creating Class](#old-way-and-new-way-of-creating-class)
+  - [NodeJS Related Points](#nodejs-related-points)
+
 ## JavaScript Notes
 
 **Defer/Async** - Used to set the loading time instance (i.e when the JS file will load?) for external Javascript file

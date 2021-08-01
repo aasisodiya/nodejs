@@ -1,5 +1,13 @@
 # How To Deploy A NodeJS Application On AWS EC2 Server
 
+- [How To Deploy A NodeJS Application On AWS EC2 Server](#how-to-deploy-a-nodejs-application-on-aws-ec2-server)
+  - [Prerequisite](#prerequisite)
+  - [Step 1: Install NodeJS](#step-1-install-nodejs)
+  - [Step 2: Setup Demo Server](#step-2-setup-demo-server)
+  - [Step 3: Run the Server](#step-3-run-the-server)
+  - [Debug](#debug)
+  - [Reference](#reference)
+
 ## Prerequisite
 
 **Instance Type:** Amazon Linux 2 AMI 2.0.20200207.1 x86_64 HVM (*Free Tier Eligible*)
