@@ -16,3 +16,4 @@
 |14-April-2020|[NodeJs AWS Lambda - Request Body](https://aasisodiya.github.io/nodejs/nodejs-aws/nodejs-aws-lambda/nodejs-aws-lambda-request-body/)|The Request Body for Different Lambda Cases|
 |16-June-2021|[Node Commands List](https://aasisodiya.github.io/nodejs/notes/node-commands)|List of frequently used commands list|
 |02-August-2021|[Code to keep you Alive!](https://aasisodiya.github.io/nodejs/notes/scripts/teams)|Code to keep you alive!|
+|27-Oct-2021|[Error: unable to get local issuer certificate](https://aasisodiya.github.io/nodejs/notes/mocha/#error-unable-to-get-local-issuer-certificate)|Commands to fix the issue|
