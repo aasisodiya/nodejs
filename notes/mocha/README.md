@@ -3,6 +3,7 @@
 - [Mocha](#mocha)
   - [Troubleshooting](#troubleshooting)
     - [Error: unable to get local issuer certificate](#error-unable-to-get-local-issuer-certificate)
+    - [Error: Cannot read property 'pickAlgorithm' of null/undefined](#error-cannot-read-property-pickalgorithm-of-nullundefined)
 
 [![Mocha](https://img.shields.io/badge/Mocha-8D6748?style=for-the-badge&logo=mocha&logoColor=white)](https://mochajs.org/)
 
@@ -27,4 +28,16 @@ Solution that worked for me, was to run below 3 commands before running `npm tes
 npm config set strict-ssl=false
 npm config set registry http://registry.npmjs.org/
 set NODE_TLS_REJECT_UNAUTHORIZED=0
+```
+
+### Error: Cannot read property 'pickAlgorithm' of null/undefined
+
+```bash
+npm ERR! Cannot read property 'pickAlgorithm' of null
+```
+
+While working on an old mocha project, on running `npm init` I was getting above error. To resolve the same running below command solved the issue.
+
+```bash
+npm cache clear --force
 ```
