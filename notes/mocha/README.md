@@ -1,5 +1,7 @@
 # Mocha
 
+[![Visitors](https://api.visitorbadge.io/api/visitors?path=aasisodiya.nodejs.mocha&labelColor=%23ffa500&countColor=%23263759&labelStyle=upper)](https://visitorbadge.io/status?path=aasisodiya.nodejs.mocha)
+
 - [Mocha](#mocha)
   - [Troubleshooting](#troubleshooting)
     - [Error: unable to get local issuer certificate](#error-unable-to-get-local-issuer-certificate)

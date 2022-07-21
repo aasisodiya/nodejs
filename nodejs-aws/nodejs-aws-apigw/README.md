@@ -1,5 +1,7 @@
 # AWS API Gateway Response Handling
 
+[![Visitors](https://api.visitorbadge.io/api/visitors?path=aasisodiya.nodejs.aws.apigw&labelColor=%23ffa500&countColor=%23263759&labelStyle=upper)](https://visitorbadge.io/status?path=aasisodiya.nodejs.aws.apigw)
+
 - [AWS API Gateway Response Handling](#aws-api-gateway-response-handling)
   - [Responses in APIGW](#responses-in-apigw)
     - [Basic Code](#basic-code)
@@ -177,12 +179,12 @@ x-amz-apigw-id: KtaQSPHcF9ZQ=
 
 ## Settings in API Gateway
 
-***APIGW > API > Settings > Binary Media Types***
+**_APIGW > API > Settings > Binary Media Types_**
 
-- You can configure binary support for your API by specifying which media types should be treated as binary types. 
+- You can configure binary support for your API by specifying which media types should be treated as binary types.
 - API Gateway will look at the Content-Type and Accept HTTP headers to decide how to handle the body. `If you fail to specify this, your content won't be treated as required`
 - In here if you add your mediatype - ex. application/json then and then only your json body get encoded into Base64
-- If you use */* all of your content get Base64 encoded
+- If you use _/_ all of your content get Base64 encoded
 
 ## Some Question to Look Into Later
 

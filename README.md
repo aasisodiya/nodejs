@@ -1,19 +1,22 @@
-# nodejs
+# NodeJS Notes
 
-[Index](https://aasisodiya.github.io/nodejs/)
-[NodeJs AWS Notes](https://aasisodiya.github.io/nodejs/nodejs-aws/)
-[NodeJS EC2 Server](https://aasisodiya.github.io/nodejs/nodejs-ec2-server/)
-[NodeJS Notes](https://aasisodiya.github.io/nodejs/notes/)
+[![Visitors](https://api.visitorbadge.io/api/visitors?path=aasisodiya.nodejs&labelColor=%23ffa500&countColor=%23263759&labelStyle=upper)](https://visitorbadge.io/status?path=aasisodiya.nodejs)
 
-|Date|Content Link|Description|
-|-|-|-|
-|26-February-2020|[NodeJs AWS S3](https://aasisodiya.github.io/nodejs/nodejs-aws/nodejs-aws-s3/)|AWS S3 Operations in NodeJs|
-|26-February-2020|[Deploy A NodeJS Application](https://aasisodiya.github.io/nodejs/nodejs-ec2-server/)|How To Deploy A NodeJS Application On AWS EC2 Server|
-|16-March-2020|[NodeJs AWS Lambda - File Operations](https://aasisodiya.github.io/nodejs/nodejs-aws/nodejs-aws-lambda/nodejs-aws-lambda-fs-operations/)|Using fs Library in Lambda|
-|18-March-2020|[NodeJs AWS Lambda - Unzip Executable File Operation](https://aasisodiya.github.io/nodejs/nodejs-aws/nodejs-aws-lambda/nodejs-aws-lambda-unzip-executablefile-operation/)|Unzip An Executable File And Use It Inside Lambda|
-|10-April-2020|[AWS API Gateway](https://aasisodiya.github.io/nodejs/nodejs-aws/nodejs-aws-apigw/)|AWS API Gateway Response Handling|
-|11-April-2020|[JS/NodeJS Notes](https://aasisodiya.github.io/nodejs/notes/)|JS/NodeJS Notes|
-|14-April-2020|[NodeJs AWS Lambda - Request Body](https://aasisodiya.github.io/nodejs/nodejs-aws/nodejs-aws-lambda/nodejs-aws-lambda-request-body/)|The Request Body for Different Lambda Cases|
-|16-June-2021|[Node Commands List](https://aasisodiya.github.io/nodejs/notes/node-commands)|List of frequently used commands list|
-|02-August-2021|[Code to keep you Alive!](https://aasisodiya.github.io/nodejs/notes/scripts/teams)|Code to keep you alive!|
-|27-Oct-2021|[Error: unable to get local issuer certificate](https://aasisodiya.github.io/nodejs/notes/mocha/#error-unable-to-get-local-issuer-certificate)|Commands to fix the issue|
+- [Index](https://aasisodiya.github.io/nodejs/)
+- [NodeJs AWS Notes](https://aasisodiya.github.io/nodejs/nodejs-aws/)
+- [NodeJS EC2 Server](https://aasisodiya.github.io/nodejs/nodejs-ec2-server/)
+- [NodeJS Notes](https://aasisodiya.github.io/nodejs/notes/)
+
+|Date|Content Link|
+|-|-|
+|2020-02-26|[AWS S3 Operations in NodeJs](https://aasisodiya.github.io/nodejs/nodejs-aws/nodejs-aws-s3/)|
+|2020-02-26|[How To Deploy A NodeJS Application On AWS EC2 Server](https://aasisodiya.github.io/nodejs/nodejs-ec2-server/)|
+|2020-04-16|[NodeJs AWS Lambda - File Operations - Using fs Library in Lambda](https://aasisodiya.github.io/nodejs/nodejs-aws/nodejs-aws-lambda/nodejs-aws-lambda-fs-operations/)|
+|2020-03-18|[NodeJs AWS Lambda - Unzip An Executable File And Use It Inside Lambda](https://aasisodiya.github.io/nodejs/nodejs-aws/nodejs-aws-lambda/nodejs-aws-lambda-unzip-executablefile-operation/)|
+|2020-04-10|[AWS API Gateway Response Handling](https://aasisodiya.github.io/nodejs/nodejs-aws/nodejs-aws-apigw/)|
+|2020-04-11|[JS/NodeJS Notes](https://aasisodiya.github.io/nodejs/notes/)|
+|2020-04-14|[NodeJs AWS Lambda - The Request Body for Different Lambda Cases](https://aasisodiya.github.io/nodejs/nodejs-aws/nodejs-aws-lambda/nodejs-aws-lambda-request-body/)|
+|2021-06-16|[Node Commands List](https://aasisodiya.github.io/nodejs/notes/node-commands)|
+|2021-07-02|[Code to keep you Alive!](https://aasisodiya.github.io/nodejs/notes/scripts/teams)|
+|2021-10-27|[Error: unable to get local issuer certificate](https://aasisodiya.github.io/nodejs/notes/mocha/#error-unable-to-get-local-issuer-certificate)|
+|2022-07-22|[Error: Cannot read property 'pickAlgorithm' of null/undefined](https://aasisodiya.github.io/nodejs/notes/mocha/#error-cannot-read-property-pickalgorithm-of-nullundefined)|
