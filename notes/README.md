@@ -1,9 +1,11 @@
 # Learning Points From Different Tutorials and Online Sources
 
+[![Visitors](https://api.visitorbadge.io/api/visitors?path=aasisodiya.nodejs.notes&labelColor=%23ffa500&countColor=%23263759&labelStyle=upper)](https://visitorbadge.io/status?path=aasisodiya.nodejs.notes)
+
 - [Learning Points From Different Tutorials and Online Sources](#learning-points-from-different-tutorials-and-online-sources)
   - [JavaScript Notes](#javascript-notes)
     - [Array Operations](#array-operations)
-    - [Counter Dielema Solution](#counter-dielema-solution)
+    - [#counter-dilemma-solution](#counter-dilemma-solution)
     - [Old Way and New Way of Creating Class](#old-way-and-new-way-of-creating-class)
   - [NodeJS Related Points](#nodejs-related-points)
 
@@ -58,7 +60,7 @@ var readWikiArticle = (content) => {
 
 **Hoisting** - Hoisting is JavaScript's default behavior of moving all declarations to the top of the current scope (to the top of the current script or the current function).
 
-**Function Hoisting** - Function declaration are hoisted, but function initializtions aren't.
+**Function Hoisting** - Function declaration are hoisted, but function initializations aren't.
 
 ```js
 helloWorld1();  // prints 'Hello World!'
@@ -152,11 +154,11 @@ class Model extends Car {
 
 > Unlike functions, and other JavaScript declarations, class declarations are not hoisted. [Reference](https://medium.com/tech-tajawal/javascript-classes-under-the-hood-6b26d2667677)
 
-> Much like their function counterparts, JavaScript class declarations are hoisted. However, they remain uninitialised until evaluation. This effectively means that you have to declare a class before you can use it. [Reference](https://scotch.io/tutorials/understanding-hoisting-in-javascript)
+> Much like their function counterparts, JavaScript class declarations are hoisted. However, they remain uninitialized until evaluation. This effectively means that you have to declare a class before you can use it. [Reference](https://scotch.io/tutorials/understanding-hoisting-in-javascript)
 
 > Both above points contradict each other, so I have added references just in case. But here is one link that explains it better [Hoisting in Modern JavaScript — let, const, and var](https://blog.bitsrc.io/hoisting-in-modern-javascript-let-const-and-var-b290405adfda) classes in JavaScript are also hoisted, and just as let or const declarations, they remain uninitialized until evaluation. So they are also affected by the “Temporal Dead Zone”.
 
-***One thing that I am sure of - let, const & class can't be called before they are declared and initialised***
+***One thing that I am sure of - let, const & class can't be called before they are declared and initialized***
 
 ---
 
@@ -630,8 +632,8 @@ var citrus = fruits.slice(1,3);
 > **Naming Convention:** Hyphens are not allowed in JavaScript. They are reserved for subtractions.
 
 ***Question:*** How to display HTML Code Snippet in your Page?
-***Solution:*** Include HTML snippets in HTML. => https://www.w3schools.com/howto/howto_html_include.asp
-https://www.beyondjava.net/html-includes
+***Solution:*** Include HTML snippets in HTML. => [link](https://www.w3schools.com/howto/howto_html_include.asp)
+[link2](https://www.beyondjava.net/html-includes)
 
 ---
 
@@ -873,7 +875,7 @@ add()
 
 ---
 
-### Counter Dielema Solution
+### #counter-dilemma-solution
 
 ```js
 var add = (function () {
@@ -1090,7 +1092,7 @@ var name="Default";
 var privateMethod = function(){
   console.log("Calling Private Method!");
 }
-// Priviledged Method
+// Privileged Method
 this.getInfo = function(){
   privateMethod();
   return this.Id+' '+name;
@@ -1132,7 +1134,7 @@ function Child(rel){
 
 **Limitations** for classical Inheritance
 
-1. No Function reuse - inmemory no reuse
+1. No Function reuse - in-memory no reuse
 2. Child can't access methods defined at parent's prototype level
 3. Pseudoclassical Inheritance - Combination of prototype chaining and classical inheritance
 
@@ -1248,7 +1250,7 @@ class Car {
 
 ## NodeJS Related Points
 
-Node.JS is Runtime Environment with Library with inbuit modules. **JS is single threaded by default** meaning it has single call stack i.e one by one execution aka Synchronous Approach
+Node.JS is Runtime Environment with Library with inbuilt modules. **JS is single threaded by default** meaning it has single call stack i.e one by one execution aka Synchronous Approach
 
 Asynchronous Operations in JS
 
@@ -1260,7 +1262,7 @@ Types of IO Operations (By default blocking, so in node they are asynchronous by
 
 1. File Operations
 2. DB Operations
-3. Newtwork IO
+3. Network IO
 
 - `node filename` (Runs the code)
 - `node --version` (Gives Version)
@@ -1275,13 +1277,13 @@ Types of IO Operations (By default blocking, so in node they are asynchronous by
 Ex. module.exports.fname = fname;
 - Every JS file is a module and every function defined is private by default
 
-Object Constrcutor is a function that initialise a object
+Object Constructor is a function that initialize a object
 
 Difference Between Package and Modules
 
 - Package is something that is identified by package.json file
 - Package can contain one or more module
-- Any module you want to contributr on npm you have to add package.json file
+- Any module you want to contributor on npm you have to add package.json file
 
 Popular **NPM Packages**
 
@@ -1306,9 +1308,9 @@ Streams:
 
 - free flow of bytes
 - collections of data
-- beneficial in handeling large amount of data
+- beneficial in handling large amount of data
 - Benefits: Smaller Memory Footprint, Faster Response Time
-- Use Cases: Handeling Large Image Files, Writing Huge amount of data on disk
+- Use Cases: Handling Large Image Files, Writing Huge amount of data on disk
 - Types of Streams: Readable, Writable, Duplex, Transform
 - Steams work by using events
 - data - This event is fired when there is data available to Readable

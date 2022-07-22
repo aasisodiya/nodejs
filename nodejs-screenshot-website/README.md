@@ -1,8 +1,12 @@
 # Screenshot Websites
 
-npm install pageres
+[![Visitors](https://api.visitorbadge.io/api/visitors?path=aasisodiya.nodejs.screenshotwebsite&labelColor=%23ffa500&countColor=%23263759&labelStyle=upper)](https://visitorbadge.io/status?path=aasisodiya.nodejs.screenshotwebsite)
 
-https://github.com/sindresorhus/pageres
+```bash
+npm install pageres
+```
+
+[Pageres](https://github.com/sindresorhus/pageres)
 
 ```js
 const Pageres = require('pageres');

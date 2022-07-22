@@ -1,5 +1,7 @@
 # Using fs Library in Lambda
 
+[![Visitors](https://api.visitorbadge.io/api/visitors?path=aasisodiya.nodejs.aws.lambda.fsoperations&labelColor=%23ffa500&countColor=%23263759&labelStyle=upper)](https://visitorbadge.io/status?path=aasisodiya.nodejs.aws.lambda.fsoperations)
+
 - [Using fs Library in Lambda](#using-fs-library-in-lambda)
   - [Documenting the issues I faced while using fs library in lambda](#documenting-the-issues-i-faced-while-using-fs-library-in-lambda)
     - [Reading any file in lambda](#reading-any-file-in-lambda)

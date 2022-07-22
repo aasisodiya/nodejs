@@ -1,5 +1,7 @@
 # The Request Body for Different Lambda Cases
 
+[![Visitors](https://api.visitorbadge.io/api/visitors?path=aasisodiya.nodejs.aws.lambda.requestbody&labelColor=%23ffa500&countColor=%23263759&labelStyle=upper)](https://visitorbadge.io/status?path=aasisodiya.nodejs.aws.lambda.requestbody)
+
 - [The Request Body for Different Lambda Cases](#the-request-body-for-different-lambda-cases)
   - [Request Body with default API Gateway Settings](#request-body-with-default-api-gateway-settings)
   - [Request Body With `Use Lambda Proxy integration` Option Disabled](#request-body-with-use-lambda-proxy-integration-option-disabled)
@@ -25,7 +27,7 @@ Building Lambda with default API Gateway Settings i.e with lambda proxy integrat
 
 ![Default Lambda APIGW Setting](images/image-001.PNG)
 
-> **Note**: With lambda proxy integration enabled the response is simpy just the body that you set, and not the whole response.
+> **Note**: With lambda proxy integration enabled the response is simply just the body that you set, and not the whole response.
 
 ```json
 {
