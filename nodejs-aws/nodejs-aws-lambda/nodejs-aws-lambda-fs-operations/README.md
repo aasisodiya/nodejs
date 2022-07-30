@@ -66,3 +66,5 @@ exports.handler = async (event) => {
 
 - [fs Promises API](https://nodejs.org/api/fs.html#fs_fs_promises_api)
 - [Difference Between readFile() and readFileSync()](https://stackoverflow.com/questions/17604866/difference-between-readfile-and-readfilesync)
+
+[![Visitors](https://api.visitorbadge.io/api/visitors?path=aasisodiya.nodejs&labelColor=%23ffa500&countColor=%23263759&labelStyle=upper)](https://visitorbadge.io/status?path=aasisodiya.nodejs)

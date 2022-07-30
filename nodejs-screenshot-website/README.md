@@ -23,3 +23,5 @@ await new Pageres({delay: 2})
 ```
 
 > **Important Note**: Code is super slow for some reason
+
+[![Visitors](https://api.visitorbadge.io/api/visitors?path=aasisodiya.nodejs&labelColor=%23ffa500&countColor=%23263759&labelStyle=upper)](https://visitorbadge.io/status?path=aasisodiya.nodejs)

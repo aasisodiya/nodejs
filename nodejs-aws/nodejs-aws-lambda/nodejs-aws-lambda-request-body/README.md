@@ -282,3 +282,5 @@ Request Body in case you select the `Method Request Passthrough` Template
 ## Reference
 
 - See [APIGW Mapping Template Reference](http://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html) This template will pass through all parameters including path, querystring, header, stage variables, and context through to the integration endpoint via the body/payload
+
+[![Visitors](https://api.visitorbadge.io/api/visitors?path=aasisodiya.nodejs&labelColor=%23ffa500&countColor=%23263759&labelStyle=upper)](https://visitorbadge.io/status?path=aasisodiya.nodejs)
