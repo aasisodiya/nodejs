@@ -7,4 +7,4 @@
 - [NodeJs AWS Lambda](https://aasisodiya.github.io/nodejs/nodejs-aws/nodejs-aws-lambda/)
 - [NodeJs AWS S3](https://aasisodiya.github.io/nodejs/nodejs-aws/nodejs-aws-s3/)
 
-[![Visitors](https://api.visitorbadge.io/api/visitors?path=aasisodiya.nodejs&labelColor=%23ffa500&countColor=%23263759&labelStyle=upper)](https://visitorbadge.io/status?path=aasisodiya.nodejs)
+[![Visitors](https://api.visitorbadge.io/api/visitors?path=aasisodiya.nodejs&label=aasisodiya/nodejs&labelColor=%23ffa500&countColor=%23263759&labelStyle=upper)](https://visitorbadge.io/status?path=aasisodiya.nodejs)

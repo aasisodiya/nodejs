@@ -193,4 +193,4 @@ x-amz-apigw-id: KtaQSPHcF9ZQ=
 3. How does APIGW handles isBase64Encoded flag?
 4. What are other options on response if you disable lambda proxy integration?
 
-[![Visitors](https://api.visitorbadge.io/api/visitors?path=aasisodiya.nodejs&labelColor=%23ffa500&countColor=%23263759&labelStyle=upper)](https://visitorbadge.io/status?path=aasisodiya.nodejs)
+[![Visitors](https://api.visitorbadge.io/api/visitors?path=aasisodiya.nodejs&label=aasisodiya/nodejs&labelColor=%23ffa500&countColor=%23263759&labelStyle=upper)](https://visitorbadge.io/status?path=aasisodiya.nodejs)
