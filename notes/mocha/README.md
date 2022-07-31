@@ -43,3 +43,5 @@ While working on an old mocha project, on running `npm init` I was getting above
 ```bash
 npm cache clear --force
 ```
+
+[![Visitors](https://api.visitorbadge.io/api/visitors?path=aasisodiya.nodejs&labelColor=%23ffa500&countColor=%23263759&labelStyle=upper)](https://visitorbadge.io/status?path=aasisodiya.nodejs)
