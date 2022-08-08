@@ -20,3 +20,4 @@
 |2021-07-02|[Code to keep you Alive!](https://aasisodiya.github.io/nodejs/notes/scripts/teams)|
 |2021-10-27|[Error: unable to get local issuer certificate](https://aasisodiya.github.io/nodejs/notes/mocha/#error-unable-to-get-local-issuer-certificate)|
 |2022-07-22|[Error: Cannot read property 'pickAlgorithm' of null/undefined](https://aasisodiya.github.io/nodejs/notes/mocha/#error-cannot-read-property-pickalgorithm-of-nullundefined)|
+|2022-08-09|[Sending basic email using SES](https://aasisodiya.github.io/nodejs/nodejs-aws/nodejs-aws-ses#sending-an-basic-email-with-ses)|
