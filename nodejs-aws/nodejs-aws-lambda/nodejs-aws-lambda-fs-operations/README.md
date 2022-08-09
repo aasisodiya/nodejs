@@ -30,35 +30,35 @@ exports.handler = async (event) => {
 
 - Failed Code
 
-    ```nodejs
-    var test = fs.readFile("test.txt", function(err, data){
-        console.log(data.toString(), err);
-    });
-    console.log(test);
-    ```
+  ```nodejs
+  var test = fs.readFile("test.txt", function(err, data){
+      console.log(data.toString(), err);
+  });
+  console.log(test);
+  ```
 
 - Successful Code
 
-    ```nodejs
-    console.log(fs.readFileSync("test.txt"));
-    console.log(fs.readFileSync('test2.txt', 'utf8'));
-    ```
+  ```nodejs
+  console.log(fs.readFileSync("test.txt"));
+  console.log(fs.readFileSync('test2.txt', 'utf8'));
+  ```
 
-    **If the encoding option is specified then this function returns a string. Otherwise it returns a buffer.**
+  **If the encoding option is specified then this function returns a string. Otherwise it returns a buffer.**
 
 - Successful Code
 
-    ```nodejs
-    console.log(await fsp.readFile('test2.txt', 'utf8'));
-    console.log(await fsp.readFile("test.txt"));
-    ```
+  ```nodejs
+  console.log(await fsp.readFile('test2.txt', 'utf8'));
+  console.log(await fsp.readFile("test.txt"));
+  ```
 
-    ```nodejs
-    fs.writeFileSync("/tmp/test.txt","Hey text.txt");
-    console.log((await fs.readFileSync("/tmp/test.txt")).toString());
-    fsp.writeFile("/tmp/test2.txt","Hey text2.txt")
-    console.log(await fsp.readFile('/tmp/test2.txt', 'utf8'));
-    ```
+  ```nodejs
+  fs.writeFileSync("/tmp/test.txt","Hey text.txt");
+  console.log((await fs.readFileSync("/tmp/test.txt")).toString());
+  fsp.writeFile("/tmp/test2.txt","Hey text2.txt")
+  console.log(await fsp.readFile('/tmp/test2.txt', 'utf8'));
+  ```
 
 **So What's The Difference?** readFileSync() is synchronous and blocks execution until finished. These return their results as return values. readFile() are asynchronous and return immediately (mostly undefined) while they function in the background. You pass a callback function which gets called when they finish.
 
@@ -67,4 +67,4 @@ exports.handler = async (event) => {
 - [fs Promises API](https://nodejs.org/api/fs.html#fs_fs_promises_api)
 - [Difference Between readFile() and readFileSync()](https://stackoverflow.com/questions/17604866/difference-between-readfile-and-readfilesync)
 
-[![Visitors](https://api.visitorbadge.io/api/visitors?path=aasisodiya.nodejs&labelColor=%23ffa500&countColor=%23263759&labelStyle=upper)](https://visitorbadge.io/status?path=aasisodiya.nodejs)
+[![Visitors](https://api.visitorbadge.io/api/visitors?path=aasisodiya.nodejs&label=aasisodiya/nodejs&labelColor=%23ffa500&countColor=%23263759&labelStyle=upper)](https://visitorbadge.io/status?path=aasisodiya.nodejs)

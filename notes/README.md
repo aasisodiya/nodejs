@@ -30,8 +30,8 @@
 In ES5, a normal function would be defined as such:
 
 ```javascript
-var readWikiArticle = function(content) {
-    // Read it!
+var readWikiArticle = function (content) {
+  // Read it!
 };
 ```
 
@@ -39,17 +39,17 @@ Whereas in ES6, using the new concise arrow function syntax:
 
 ```javascript
 var readWikiArticle = (content) => {
-    //Read article!
+  //Read article!
 };
 ```
 
-- Arrow functions also improve variable binding between functions. You don't need the function keyword, the return keyword, and the curly brackets. ***(But you can only omit the return keyword and the curly brackets if the function is a single statement.)***
+- Arrow functions also improve variable binding between functions. You don't need the function keyword, the return keyword, and the curly brackets. **_(But you can only omit the return keyword and the curly brackets if the function is a single statement.)_**
 
-- The handling of `this` keyword is also different in arrow functions compared to regular functions. In short, with arrow functions there are no binding of `this`. *(In regular functions the this keyword represented the object that called the function, which could be the window, the document, a button or whatever. With arrow functions the this keyword always represents the object that defined the arrow function.)*
+- The handling of `this` keyword is also different in arrow functions compared to regular functions. In short, with arrow functions there are no binding of `this`. _(In regular functions the this keyword represented the object that called the function, which could be the window, the document, a button or whatever. With arrow functions the this keyword always represents the object that defined the arrow function.)_
 
-**Transpiling** - Since ES 2015, transpiling JavaScript has became very common. Transpilation is a source to source compilation in which the newer versions of JavaScript are used in the user's source code and the transpiler rewrites them so that they are compliant with the current specification. *(Usually, transpilers transpile down to ES3 to maintain compatibility with all versions of browsers. Transpiling is sometimes done to avoid needing polyfills.)*
+**Transpiling** - Since ES 2015, transpiling JavaScript has became very common. Transpilation is a source to source compilation in which the newer versions of JavaScript are used in the user's source code and the transpiler rewrites them so that they are compliant with the current specification. _(Usually, transpilers transpile down to ES3 to maintain compatibility with all versions of browsers. Transpiling is sometimes done to avoid needing polyfills.)_
 
-**Polyfills** - Polyfills allow using functionalities from newer ECMA versions in older environments that lack them. *(In web development, a polyfill is code that implements a feature on web browsers that do not support the feature.)*
+**Polyfills** - Polyfills allow using functionalities from newer ECMA versions in older environments that lack them. _(In web development, a polyfill is code that implements a feature on web browsers that do not support the feature.)_
 
 **let** and **const** - ES2015 introduced two important new JavaScript keywords: let and const. These two keywords provide Block Scope variables (and constants) in JavaScript.
 
@@ -63,15 +63,15 @@ var readWikiArticle = (content) => {
 **Function Hoisting** - Function declaration are hoisted, but function initializations aren't.
 
 ```js
-helloWorld1();  // prints 'Hello World!'
-function helloWorld1(){
-  console.log('Hello World!');
+helloWorld1(); // prints 'Hello World!'
+function helloWorld1() {
+  console.log("Hello World!");
 }
 
-helloWorld2();  // TypeError: helloWorld is not a function
-var helloWorld2 = function(){
-  console.log('Hello World!');
-}
+helloWorld2(); // TypeError: helloWorld is not a function
+var helloWorld2 = function () {
+  console.log("Hello World!");
+};
 
 // Functions defined using an expression are not hoisted.
 // Outputs: "Definition hoisted!"
@@ -81,11 +81,11 @@ definitionHoisted();
 definitionNotHoisted();
 
 function definitionHoisted() {
-    console.log("Definition hoisted!");
+  console.log("Definition hoisted!");
 }
 
 var definitionNotHoisted = function () {
-    console.log("Definition not hoisted!");
+  console.log("Definition not hoisted!");
 };
 
 // ReferenceError: funcName is not defined
@@ -95,7 +95,7 @@ funcName();
 varName();
 
 var varName = function funcName() {
-    console.log("Definition not hoisted!");
+  console.log("Definition not hoisted!");
 };
 // Function parameters are the names listed in the function definition.
 
@@ -115,7 +115,7 @@ var varName = function funcName() {
 
 **JSON** - JSON stands for JavaScript Object Notation.
 
-**Classes in Javascript** - ES6 introduced classes. A class is a type of function, but instead of using the keyword function to initiate it, we use the keyword `class`, and the properties is assigned inside a `constructor()` method. Use the keyword `class` to create a class, ***and always add a constructor method***. The constructor method is called each time the class object is initialized. A simple class definition for a class named "Car":
+**Classes in Javascript** - ES6 introduced classes. A class is a type of function, but instead of using the keyword function to initiate it, we use the keyword `class`, and the properties is assigned inside a `constructor()` method. Use the keyword `class` to create a class, **_and always add a constructor method_**. The constructor method is called each time the class object is initialized. A simple class definition for a class named "Car":
 
 ```javascript
 class Car {
@@ -123,13 +123,13 @@ class Car {
     this.carname = brand;
   }
   methodName() {
-      return;
+    return;
   }
   static staticMethodName() {
-      return;
+    return;
   }
   present() {
-    return 'I have a ' + this.carname;
+    return "I have a " + this.carname;
   }
   get cnam() {
     return this.carname;
@@ -145,7 +145,7 @@ class Model extends Car {
     this.model = mod;
   }
   show() {
-    return this.present() + ', it is a ' + this.model;
+    return this.present() + ", it is a " + this.model;
   }
 }
 ```
@@ -158,7 +158,7 @@ class Model extends Car {
 
 > Both above points contradict each other, so I have added references just in case. But here is one link that explains it better [Hoisting in Modern JavaScript — let, const, and var](https://blog.bitsrc.io/hoisting-in-modern-javascript-let-const-and-var-b290405adfda) classes in JavaScript are also hoisted, and just as let or const declarations, they remain uninitialized until evaluation. So they are also affected by the “Temporal Dead Zone”.
 
-***One thing that I am sure of - let, const & class can't be called before they are declared and initialized***
+**_One thing that I am sure of - let, const & class can't be called before they are declared and initialized_**
 
 ---
 
@@ -208,12 +208,12 @@ ES6 added the following properties to the Number object:
 **The `use strict` Directive** - `use strict` defines that the JavaScript code should be executed in "strict mode". With strict mode you can, for example, not use undeclared variables. Example
 
 ```js
-x = 3.14;       // This will not cause an error.
+x = 3.14; // This will not cause an error.
 myFunction();
 
 function myFunction() {
   "use strict";
-  y = 3.14;   // This will cause an error
+  y = 3.14; // This will cause an error
 }
 ```
 
@@ -224,14 +224,14 @@ function myFunction() {
 ```js
 var person = {
   firstName: "John",
-  lastName : "Doe",
-  language : "NO",
+  lastName: "Doe",
+  language: "NO",
   get lang() {
     return this.language;
   },
   set lang(value) {
     this.language = value;
-  }
+  },
 };
 
 // Set an object property using a setter:
@@ -249,16 +249,16 @@ Example
 // Create an Object:
 var person = {
   firstName: "John",
-  lastName : "Doe",
-  language : "NO",
+  lastName: "Doe",
+  language: "NO",
 };
 
 // Change a Property:
 Object.defineProperty(person, "language", {
   value: "EN",
-  writable : true,
-  enumerable : true,
-  configurable : true
+  writable: true,
+  enumerable: true,
+  configurable: true,
 });
 ```
 
@@ -277,7 +277,7 @@ Dolly!";
 ```js
 var i;
 for (i = 0; i < arr.length; i++) {
-//some logic
+  //some logic
 }
 ```
 
@@ -287,7 +287,7 @@ for (i = 0; i < arr.length; i++) {
 var i;
 var l = arr.length;
 for (i = 0; i < l; i++) {
-//some logic
+  //some logic
 }
 ```
 
@@ -312,15 +312,16 @@ with (Math) {
 
 var x = 0.1;
 var y = 0.2;
-var z = x + y            // the result in z will not be 0.3 (0.30000000000000004)
+var z = x + y // the result in z will not be 0.3 (0.30000000000000004)
 
 > Avoid Using eval() as it presents security risk
 
-**The debugger Keyword** - The debugger keyword stops the execution of JavaScript, and calls (if available) the debugging function. (i.e With the debugger turned on *(F12/Inspect Mode)*, the code inside the script element should stop executing before it executes the line after `debugger`) Example:
+**The debugger Keyword** - The debugger keyword stops the execution of JavaScript, and calls (if available) the debugging function. (i.e With the debugger turned on _(F12/Inspect Mode)_, the code inside the script element should stop executing before it executes the line after `debugger`) Example:
 
 ```js
-var a = 10, b = 20;
-debugger
+var a = 10,
+  b = 20;
+debugger;
 var c = a + b;
 console.log(c);
 ```
@@ -329,20 +330,21 @@ console.log(c);
 
 ```js
 const objectx = {
-    "prop":"val"
-}
+  prop: "val",
+};
 
-objectx = 1 //gives error
+objectx = 1; //gives error
 // VM1067:1 Uncaught TypeError: Assignment to constant variable.
 
-const object = { //gives error
-    "prop":"val"
-}
+const object = {
+  //gives error
+  prop: "val",
+};
 // VM1076:1 Uncaught SyntaxError: Identifier 'object' has already been declared
 
-objectx.prop2 = "val"
+objectx.prop2 = "val";
 
-console.log(objectx)
+console.log(objectx);
 // {prop: "val", prop2: "val"}
 ```
 
@@ -355,14 +357,14 @@ console.log(objectx)
 
 ```js
 var person = {
-  fullName: function() {
+  fullName: function () {
     return this.firstName + " " + this.lastName;
-  }
-}
+  },
+};
 var person1 = {
   firstName: "Mary",
-  lastName: "Doe"
-}
+  lastName: "Doe",
+};
 person.fullName.apply(person1);
 person.fullName.call(person1);
 person.fullName.apply(person1, ["Oslo", "Norway"]);
@@ -374,11 +376,9 @@ person.fullName.call(person1, "Oslo", "Norway");
 ```js
 try {
   //Block of code to try
-}
-catch(err) {
+} catch (err) {
   //Block of code to handle errors
-}
-finally {
+} finally {
   //Block of code to be executed regardless of the try / catch result
 }
 ```
@@ -387,43 +387,48 @@ finally {
 
 **Regex** - Regular Expression in Javascript
 
-|Expression|Details|
-|-|-|
-|`i`|Perform case-insensitive matching|
-|`g`|Perform a global match (find all matches rather than stopping after the first match)|
-|`m`|Perform multiline matching|
-|`[abc]`|Find any of the characters between the brackets|
-|`[0-9]`|Find any of the digits between the brackets|
-|`(x\|y)`|Find any of the alternatives separated with \||
-|`\d`|Find a digit|
-|`\s`|Find a whitespace character|
-|`\b`|Find a match at the beginning of a word like this: \bWORD, or at the end of a word like this: WORD\b|
-|`\uxxxx`|Find the Unicode character specified by the hexadecimal number xxxx|
-|`n+`|Matches any string that contains at least one n|
-|`n*`|Matches any string that contains zero or more occurrences of n|
-|`n?`|Matches any string that contains zero or one occurrences of n|
+| Expression | Details                                                                                              |
+| ---------- | ---------------------------------------------------------------------------------------------------- |
+| `i`        | Perform case-insensitive matching                                                                    |
+| `g`        | Perform a global match (find all matches rather than stopping after the first match)                 |
+| `m`        | Perform multiline matching                                                                           |
+| `[abc]`    | Find any of the characters between the brackets                                                      |
+| `[0-9]`    | Find any of the digits between the brackets                                                          |
+| `(x\|y)`   | Find any of the alternatives separated with \|                                                       |
+| `\d`       | Find a digit                                                                                         |
+| `\s`       | Find a whitespace character                                                                          |
+| `\b`       | Find a match at the beginning of a word like this: \bWORD, or at the end of a word like this: WORD\b |
+| `\uxxxx`   | Find the Unicode character specified by the hexadecimal number xxxx                                  |
+| `n+`       | Matches any string that contains at least one n                                                      |
+| `n*`       | Matches any string that contains zero or more occurrences of n                                       |
+| `n?`       | Matches any string that contains zero or one occurrences of n                                        |
 
 ```js
 var patt = /e/;
 patt.test("The best things in life are free!"); // true
 var obj = /e/.exec("The best things in life are free!");
 document.getElementById("demo").innerHTML =
-"Found " + obj[0] + " in position " + obj.index + " in the text: " + obj.input;
+  "Found " +
+  obj[0] +
+  " in position " +
+  obj.index +
+  " in the text: " +
+  obj.input;
 ```
 
 ---
 
 **Bit Wise Operations** Examples
 
-|Operation Result|Same as Result|
-|-|-|
-|5 & 1 = 1|0101 & 0001 = 0001|
-|5 \| 1 = 5 | 0101 \| 0001 = 0101
-|~ 5 = 10 | ~0101 = 1010|
-|5 ^ 1 = 4 | 0101 ^ 0001 = 0100|
-|5 << 1 = 10|0101 << 1 = 1010|
-|5 >> 1 = 2|0101 >> 1 =  0010|
-|5 >>> 1 = 2|0101 >>> 1 =  0010|
+| Operation Result | Same as Result      |
+| ---------------- | ------------------- |
+| 5 & 1 = 1        | 0101 & 0001 = 0001  |
+| 5 \| 1 = 5       | 0101 \| 0001 = 0101 |
+| ~ 5 = 10         | ~0101 = 1010        |
+| 5 ^ 1 = 4        | 0101 ^ 0001 = 0100  |
+| 5 << 1 = 10      | 0101 << 1 = 1010    |
+| 5 >> 1 = 2       | 0101 >> 1 = 0010    |
+| 5 >>> 1 = 2      | 0101 >>> 1 = 0010   |
 
 ```text
 << Zero fill left shift Shifts left by pushing zeros in from the right and let the leftmost bits fall off
@@ -431,10 +436,10 @@ document.getElementById("demo").innerHTML =
 >>> Zero fill right shift Shifts right by pushing zeros in from the left, and let the rightmost bits fall off
 ```
 
-|Operation|Example|
-|-|-|
-|Convert Binary to Decimal | `parseInt("1011", 2)`|
-|Convert Decimal to Binary | `(dec >>> 0).toString(2)`|
+| Operation                 | Example                   |
+| ------------------------- | ------------------------- |
+| Convert Binary to Decimal | `parseInt("1011", 2)`     |
+| Convert Decimal to Binary | `(dec >>> 0).toString(2)` |
 
 You can check the constructor property to find out if an object is an Array or Date (contains the word "Array" or "Date") :
 Example
@@ -451,26 +456,26 @@ function isDate(myDate) {
 }
 ```
 
-|Function|Description|
-|-|-|
-|toExponential()|Returns a string, with a number rounded and written using exponential notation.|
-|toFixed()|Returns a string, with a number rounded and written with a specified number of decimals.|
-|toPrecision()|Returns a string, with a number written with a specified length|
+| Function        | Description                                                                              |
+| --------------- | ---------------------------------------------------------------------------------------- |
+| toExponential() | Returns a string, with a number rounded and written using exponential notation.          |
+| toFixed()       | Returns a string, with a number rounded and written with a specified number of decimals. |
+| toPrecision()   | Returns a string, with a number written with a specified length                          |
 
 ```js
 var number = 123456789.123456789;
-number.toExponential()
-"1.2345678912345679e+8"
-number.toExponential(5)
-"1.23457e+8"
-number.toFixed()
-"123456789"
-number.toFixed(5)
-"123456789.12346"
-number.toPrecision()
-"123456789.12345679"
-number.toPrecision(5)
-"1.2346e+8"
+number.toExponential();
+("1.2345678912345679e+8");
+number.toExponential(5);
+("1.23457e+8");
+number.toFixed();
+("123456789");
+number.toFixed(5);
+("123456789.12346");
+number.toPrecision();
+("123456789.12345679");
+number.toPrecision(5);
+("1.2346e+8");
 ```
 
 **Infinity in JS** is used like this `var x = Infinity;`
@@ -480,7 +485,7 @@ number.toPrecision(5)
 **for/in loop** - The JavaScript for/in statement loops through the properties of an object
 
 ```js
-var person = {fname:"John", lname:"Doe", age:25}; 
+var person = { fname: "John", lname: "Doe", age: 25 };
 var text = "";
 var x;
 for (x in person) {
@@ -492,7 +497,7 @@ for (x in person) {
 **The For/Of Loop** - The JavaScript for/of statement loops through the values of an iterable objects, for/of lets you loop over data structures that are iterable such as Arrays, Strings, Maps, NodeLists, and more.
 
 ```js
-var cars = ['BMW', 'Volvo', 'Mini'];
+var cars = ["BMW", "Volvo", "Mini"];
 var x;
 
 for (x of cars) {
@@ -500,10 +505,10 @@ for (x of cars) {
 }
 ```
 
-|Loops|Details|
-|-|-|
-|For/in|Loops through the properties of an object|
-|For/of|Loops through the values of an iterable objects|
+| Loops  | Details                                         |
+| ------ | ----------------------------------------------- |
+| For/in | Loops through the properties of an object       |
+| For/of | Loops through the values of an iterable objects |
 
 > Switch cases use strict comparison (===).
 
@@ -513,14 +518,14 @@ for (x of cars) {
 function isNegative(x) {
   return x < 0;
 }
-test = [1,2,3,4,-5]
-test.some(isNegative)
+test = [1, 2, 3, 4, -5];
+test.some(isNegative);
 // true
-test.every(isNegative)
+test.every(isNegative);
 // false
-test.some(x => x > 3)
+test.some((x) => x > 3);
 // true
-test.every(x => x > 3)
+test.every((x) => x > 3);
 // false
 ```
 
@@ -531,28 +536,36 @@ test.every(x => x > 3)
 **sort() and reverse()** - By default, the sort() function sorts values as strings. `arrayorobject.sort(compareFunction)` The compare function should return a negative, zero, or positive value, depending on the arguments
 
 ```js
-var array = [1,2,3,4,5,11,22,33,7,8,9]
-array.sort()
+var array = [1, 2, 3, 4, 5, 11, 22, 33, 7, 8, 9];
+array.sort();
 // (11) [1, 11, 2, 22, 3, 33, 4, 5, 7, 8, 9]
-array.reverse()
+array.reverse();
 // (11) [9, 8, 7, 5, 4, 33, 3, 22, 2, 11, 1]
 
 // Sort in Ascending Order
-var array = [1,2,3,4,5,11,22,33,7,8,9]
-array.sort(function(a, b){return a - b});
+var array = [1, 2, 3, 4, 5, 11, 22, 33, 7, 8, 9];
+array.sort(function (a, b) {
+  return a - b;
+});
 // (11) [1, 2, 3, 4, 5, 7, 8, 9, 11, 22, 33]
 
-var array = [1,2,3,4,5,11,22,33,7,8,9]
-array.reverse(function(a, b){return a - b});
+var array = [1, 2, 3, 4, 5, 11, 22, 33, 7, 8, 9];
+array.reverse(function (a, b) {
+  return a - b;
+});
 // (11) [9, 8, 7, 33, 22, 11, 5, 4, 3, 2, 1]
 
 // Sorts in Descending Order
-var array = [1,2,3,4,5,11,22,33,7,8,9]
-array.sort(function(a, b){return b - a});
+var array = [1, 2, 3, 4, 5, 11, 22, 33, 7, 8, 9];
+array.sort(function (a, b) {
+  return b - a;
+});
 // (11) [33, 22, 11, 9, 8, 7, 5, 4, 3, 2, 1]
 
-var array = [1,2,3,4,5,11,22,33,7,8,9]
-array.reverse(function(a, b){return b - a});
+var array = [1, 2, 3, 4, 5, 11, 22, 33, 7, 8, 9];
+array.reverse(function (a, b) {
+  return b - a;
+});
 // (11) [9, 8, 7, 33, 22, 11, 5, 4, 3, 2, 1]
 ```
 
@@ -561,7 +574,7 @@ array.reverse(function(a, b){return b - a});
 Highest Number in an Array = `Math.max.apply(null, arr);`
 
 ```js
-var array = [1,2,3,4,5,11,22,33,7,8,9];
+var array = [1, 2, 3, 4, 5, 11, 22, 33, 7, 8, 9];
 Math.max.apply(null, array);
 // 33
 ```
@@ -578,15 +591,15 @@ Math.max.apply(null, array);
 **splice()** - With clever parameter setting, you can use splice() to remove elements without leaving "holes" in the array
 
 **Syntax**: `array.splice(index, howmany, item1, ....., itemX)`
-|Parameter Values|Parameter  Description|
+|Parameter Values|Parameter Description|
 |-|-|
 |index|Required. An integer that specifies at what position to add/remove items, Use negative values to specify the position from the end of the array
 |howmany|Optional. The number of items to be removed. If set to 0, no items will be removed|
 |item1, ..., itemX|Optional. The new item(s) to be added to the array|
 
 ```js
-var fruits = ["Banana","Orange","Apple","Mango"]
-var removed = fruits.splice(2, 2, "Lemon", "Kiwi")
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+var removed = fruits.splice(2, 2, "Lemon", "Kiwi");
 // Original Array:
 // Banana,Orange,Apple,Mango
 
@@ -598,15 +611,15 @@ var removed = fruits.splice(2, 2, "Lemon", "Kiwi")
 ```
 
 ```js
-var test = ["a","b","c","d"]
+var test = ["a", "b", "c", "d"];
 // undefined
-test.splice(0,1)
+test.splice(0, 1);
 // ["a"]
-test
+test;
 // (3) ["b", "c", "d"]
-test.splice(0,0,"a")
+test.splice(0, 0, "a");
 // []
-test
+test;
 // (4) ["a", "b", "c", "d"]
 ```
 
@@ -614,25 +627,25 @@ The slice() method slices out a piece of an array into a new array.
 
 ```js
 //Banana,Orange,Lemon,Apple,Mango
-var citrus = fruits.slice(1,3);
+var citrus = fruits.slice(1, 3);
 //Orange,Lemon
 ```
 
 ---
 
-|Events|Description|
-|-|-|
-|onchange|An HTML element has been changed|
-|onclick|The user clicks an HTML element|
-|onmouseover|The user moves the mouse over an HTML element|
-|onmouseout|The user moves the mouse away from an HTML element|
-|onkeydown|The user pushes a keyboard key|
-|onload|The browser has finished loading the page|
+| Events      | Description                                        |
+| ----------- | -------------------------------------------------- |
+| onchange    | An HTML element has been changed                   |
+| onclick     | The user clicks an HTML element                    |
+| onmouseover | The user moves the mouse over an HTML element      |
+| onmouseout  | The user moves the mouse away from an HTML element |
+| onkeydown   | The user pushes a keyboard key                     |
+| onload      | The browser has finished loading the page          |
 
 > **Naming Convention:** Hyphens are not allowed in JavaScript. They are reserved for subtractions.
 
-***Question:*** How to display HTML Code Snippet in your Page?
-***Solution:*** Include HTML snippets in HTML. => [link](https://www.w3schools.com/howto/howto_html_include.asp)
+**_Question:_** How to display HTML Code Snippet in your Page?
+**_Solution:_** Include HTML snippets in HTML. => [link](https://www.w3schools.com/howto/howto_html_include.asp)
 [link2](https://www.beyondjava.net/html-includes)
 
 ---
@@ -651,7 +664,7 @@ var citrus = fruits.slice(1,3);
 **Defining Objects** - Using an Object Literal
 
 ```js
-var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+var person = { firstName: "John", lastName: "Doe", age: 50, eyeColor: "blue" };
 ```
 
 Using the JavaScript Keyword new :
@@ -669,10 +682,10 @@ person.eyeColor = "blue";
 Objects are [mutable](https://benmccormick.org/2016/06/04/what-are-mutable-and-immutable-data-structures-2): They are addressed by reference, not by value.
 
 ```js
-var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"}
+var person = { firstName: "John", lastName: "Doe", age: 50, eyeColor: "blue" };
 
 var x = person;
-x.age = 10;           // This will change both x.age and person.age
+x.age = 10; // This will change both x.age and person.age
 // The object x is not a copy of person. It is person. Both x and person are the same object.
 ```
 
@@ -735,14 +748,14 @@ Person.prototype.nationality = "English"; //will reflect on objects created with
 The JavaScript prototype property also allows you to add new methods to objects constructors
 
 ```js
-var x1 = new Object();    // A new Object object
-var x2 = new String();    // A new String object
-var x3 = new Number();    // A new Number object
-var x4 = new Boolean();   // A new Boolean object
-var x5 = new Array();     // A new Array object
-var x6 = new RegExp();    // A new RegExp object
-var x7 = new Function();  // A new Function object
-var x8 = new Date();      // A new Date object
+var x1 = new Object(); // A new Object object
+var x2 = new String(); // A new String object
+var x3 = new Number(); // A new Number object
+var x4 = new Boolean(); // A new Boolean object
+var x5 = new Array(); // A new Array object
+var x6 = new RegExp(); // A new RegExp object
+var x7 = new Function(); // A new Function object
+var x8 = new Date(); // A new Date object
 ```
 
 **ECMAScript 5 added a lot of new Object Methods to JavaScript.**
@@ -750,38 +763,38 @@ var x8 = new Date();      // A new Date object
 ```js
 // ES5 New Object Methods
 // Adding or changing an object property
-Object.defineProperty(object, property, descriptor) 
+Object.defineProperty(object, property, descriptor);
 // Ex. Object.defineProperty(person, "language", {value : "NO"});
 
 // Adding or changing many object properties
-Object.defineProperties(object, descriptors)
+Object.defineProperties(object, descriptors);
 
 // Accessing Properties
-Object.getOwnPropertyDescriptor(object, property)
+Object.getOwnPropertyDescriptor(object, property);
 
 // Returns all properties as an array
-Object.getOwnPropertyNames(object) // Returns an array of properties
+Object.getOwnPropertyNames(object); // Returns an array of properties
 
 // Returns enumerable properties as an array
-Object.keys(object) // Returns an array of enumerable properties (if enumerable:false then it is rejected)
+Object.keys(object); // Returns an array of enumerable properties (if enumerable:false then it is rejected)
 
 // Accessing the prototype
-Object.getPrototypeOf(object)
+Object.getPrototypeOf(object);
 
 // Prevents adding properties to an object
-Object.preventExtensions(object)
+Object.preventExtensions(object);
 // Returns true if properties can be added to an object
-Object.isExtensible(object)
+Object.isExtensible(object);
 
 // Prevents changes of object properties (not values)
-Object.seal(object)
+Object.seal(object);
 // Returns true if object is sealed
-Object.isSealed(object)
+Object.isSealed(object);
 
 // Prevents any changes to an object
-Object.freeze(object)
+Object.freeze(object);
 // Returns true if object is frozen
-Object.isFrozen(object)
+Object.isFrozen(object);
 ```
 
 **Changing Meta Data** ES5 allows the following property meta data to be changed:
@@ -811,11 +824,11 @@ Object.defineProperty(person, "language", {enumerable:false});
 
 ```js
 function test() {
-    console.log("No. of arguments passed:", arguments.length)
+  console.log("No. of arguments passed:", arguments.length);
 }
-test()
+test();
 // No. of arguments passed: 0
-test(1,2,3)
+test(1, 2, 3);
 // No. of arguments passed: 3
 ```
 
@@ -827,9 +840,9 @@ test(1,2,3)
 **Spread Operator (...)** - Spread operator can be used in many cases,like when we want to expand,copy,concat,with math object.
 
 ```js
-let arr = [1,2,3];
-let arr2 = [4,5];
-arr = [...arr,...arr2];
+let arr = [1, 2, 3];
+let arr2 = [4, 5];
+arr = [...arr, ...arr2];
 ```
 
 > Note: Though we can achieve the same result, but it is not recommended to use the spread in this particular case, as for a large data set it will work slower as when compared to the native concat() method.
@@ -837,9 +850,9 @@ arr = [...arr,...arr2];
 ```js
 // References
 // changed the original array
-let arr = ['a','b','c'];
+let arr = ["a", "b", "c"];
 let arr2 = arr;
-arr2.push('d');
+arr2.push("d");
 console.log(arr2);
 console.log(arr); // even affected the original array(arr)
 ```
@@ -848,26 +861,26 @@ console.log(arr); // even affected the original array(arr)
 
 ```js
 var person = {
-  fullName: function() {
+  fullName: function () {
     return this.firstName + " " + this.lastName;
-  }
-}
+  },
+};
 var person1 = {
-  firstName:"John",
-  lastName: "Doe"
-}
-person.fullName.call(person1);  // Will return "John Doe"
+  firstName: "John",
+  lastName: "Doe",
+};
+person.fullName.call(person1); // Will return "John Doe"
 ```
 
 ```js
 var temp = 100;
-function add(){
+function add() {
   console.log(temp); //Displays undefined
   var temp = 10;
   temp = temp + temp;
   console.log(temp); //20
 }
-add()
+add();
 // undefined
 // 20
 // Function Hoisting is causing the issue in above case
@@ -880,7 +893,10 @@ add()
 ```js
 var add = (function () {
   var counter = 0;
-  return function () {counter += 1; return counter}
+  return function () {
+    counter += 1;
+    return counter;
+  };
 })();
 
 add();
@@ -890,7 +906,7 @@ add();
 ```
 
 This is called a JavaScript closure. It makes it possible for a function to have "private" variables.
-*A closure is a function having access to the parent scope, even after the parent function has closed.*
+_A closure is a function having access to the parent scope, even after the parent function has closed._
 
 **DOM** - The HTML DOM (Document Object Model) Example: `document.querySelectorAll("p.intro");`
 
@@ -917,6 +933,7 @@ Navigating Between Nodes:
 `setInterval(function, milliseconds)` is same as setTimeout(), but repeats the execution of the function continuously. The `setTimeout()` and `setInterval()` are both methods of the HTML DOM Window object. The `clearInterval()` method stops the executions of the function specified in the `setInterval()` method.
 
 **Cookie** - document.cookie = " name=value; expires=Thu, 18 Dec 2013 12:00:00 UTC";
+
 > For deleting a cookie just set expires as some old time value
 
 **AJAX** - Asynchronous JavaScript And XML. AJAX is not a programming language. AJAX just uses a combination of:
@@ -954,7 +971,7 @@ With the XMLHttpRequest object you can define a function to be executed when the
 > Synchronous XMLHttpRequest (async = false) is not recommended because the JavaScript will stop executing until the server response is ready. If the server is busy or slow, the application will hang or stop.
 
 ```js
-xhttp.onreadystatechange = function() {
+xhttp.onreadystatechange = function () {
   if (this.readyState == 4 && this.status == 200) {
     document.getElementById("demo").innerHTML = this.responseText;
   }
@@ -967,14 +984,20 @@ xhttp.onreadystatechange = function() {
 **Functions in JavaScript** Examples
 
 ```js
-function functionName(){ /*function body*/ }
-function functionName(x,y){ return x+y; }
+function functionName() {
+  /*function body*/
+}
+function functionName(x, y) {
+  return x + y;
+}
 ```
 
 **Immediately Invoked Function Expression** (aka IIFE)
 
 ```js
-(function(n){/*function body*/})(n);
+(function (n) {
+  /*function body*/
+})(n);
 ```
 
 **Question:** What happens if function name is repeated?
@@ -989,7 +1012,9 @@ Object.methodOne().methodTwo().methodThree();
 **Check if JS is disabled** - Can be done in HTML
 
 ```html
-<script>/*some javascript*/</script>
+<script>
+  /*some javascript*/
+</script>
 <noscript>/*for when javascript is diabled*/</noscript>
 ```
 
@@ -999,9 +1024,9 @@ Object.methodOne().methodTwo().methodThree();
 var personObj1 = new Object();
 personObj1.id = 8;
 personObj1.name = "Akash";
-personObj1.getData = function(){
+personObj1.getData = function () {
   return this.id + " " + this.name;
-}
+};
 ```
 
 **Empty Object** Example
@@ -1014,90 +1039,89 @@ var personObj2 = {};
 
 ```js
 var personObj3 = {
-  id:1,
-  name:"Aditya",
-  getData:function(){
+  id: 1,
+  name: "Aditya",
+  getData: function () {
     return this.id + " " + this.name;
-  }
-}
+  },
+};
 ```
 
 **Using Template** Example
 
 ```js
-function personObj(id,name){
-  this.id=id;
-  this.name=name;
-  this.getData = function(){
+function personObj(id, name) {
+  this.id = id;
+  this.name = name;
+  this.getData = function () {
     return this.id + " " + this.name;
-  }
+  };
 }
-personObj4 = new personObj(1,"Aryan");
+personObj4 = new personObj(1, "Aryan");
 ```
 
 **Deleting Property** Example
 
 ```js
-delete personObj4.name; 
+delete personObj4.name;
 ```
 
 **Define Property** - Object.defineProperty() - method defines a new property directly on an object or modifies an existing property on an object and return the object.
 
 ```js
-Object.defineProperty(man, 'species', {
-  value: 'Human Being',
+Object.defineProperty(man, "species", {
+  value: "Human Being",
   writable: false,
   configurable: false,
-  enumerable: true
+  enumerable: true,
 });
 ```
 
 **Constructor Level Function** Example
 
 ```js
-function Employee(r){
-this.role =r;
-this.display = function()
-{
-  alert('CTOR Level '+this.role);
-}
+function Employee(r) {
+  this.role = r;
+  this.display = function () {
+    alert("CTOR Level " + this.role);
+  };
 }
 ```
 
 **Prototype Level Function** Example
 
 ```js
-Employee.prototype.display = function(){
-  alert("Prototype Level "+this.role);
-}
+Employee.prototype.display = function () {
+  alert("Prototype Level " + this.role);
+};
 ```
 
 **Object Level Function** Example
 
 ```js
-emp1.display = function(){
-  alert('Object Level '+this.role);
-}
+emp1.display = function () {
+  alert("Object Level " + this.role);
+};
 ```
 
 **Abstraction and Encapsulation** Example
 
 ```js
-function Person(){
-this.Id = 100;
-this.hobbies = ['Music','Cricket'];
-// private data member
-var name="Default";
-// private method
-var privateMethod = function(){
-  console.log("Calling Private Method!");
-}
-// Privileged Method
-this.getInfo = function(){
-  privateMethod();
-  return this.Id+' '+name;
-}
-Person.population++;
+function Person() {
+  this.Id = 100;
+  this.hobbies = ["Music", "Cricket"];
+  // private data member
+  var name = "Default";
+  // private method
+  var privateMethod = function () {
+    console.log("Calling Private Method!");
+  };
+  // Privileged Method
+  this.getInfo = function () {
+    privateMethod();
+    return this.Id + " " + name;
+  };
+  Person.population++;
 }
 ```
 
@@ -1116,7 +1140,7 @@ Person.prototype.hasBrain = true;
 **Inheritance using Prototype Chaining** Example
 
 ```js
-Child.prototype = new Parent('Mother');
+Child.prototype = new Parent("Mother");
 Child.prototype.constructor = Child;
 ```
 
@@ -1127,8 +1151,8 @@ Child.prototype.constructor = Child;
 **Inheritance using classical Inheritance** Example
 
 ```js
-function Child(rel){
-  Parent.call(this,rel);// Inheritance
+function Child(rel) {
+  Parent.call(this, rel); // Inheritance
 }
 ```
 
@@ -1142,38 +1166,43 @@ function Child(rel){
 // Human - base/super class
 // Student - derived/sub class
 
-function Human(name){
+function Human(name) {
   this.name = name;
 }
 
-Human.prototype.introduction = function(){
-  alert('Hi, I am '+this.name);
-}
+Human.prototype.introduction = function () {
+  alert("Hi, I am " + this.name);
+};
 // Prototype Chaining
 Student.prototype = new Human();
 Student.prototype.constructor = Student;
 
-function Student(nm,college,courses){
-  Human.call(this,nm);// Classical Inheritance
+function Student(nm, college, courses) {
+  Human.call(this, nm); // Classical Inheritance
   this.college = college;
   this.courses = courses;
 }
 
-Student.prototype.introduction = function(){
-  alert('Hi, I am '+this.name+
-      ', I am a student of '+this.college+
-      ', I study '+this.courses);
-}
-Student.prototype.takeExams = function(){
-  alert('This is Exam time!');
-}
+Student.prototype.introduction = function () {
+  alert(
+    "Hi, I am " +
+      this.name +
+      ", I am a student of " +
+      this.college +
+      ", I study " +
+      this.courses
+  );
+};
+Student.prototype.takeExams = function () {
+  alert("This is Exam time!");
+};
 ```
 
 **Polymorphism** Example
 
 ```js
-function letMeIntroduce(obj){
-  obj.introduction();// polymorphism
+function letMeIntroduce(obj) {
+  obj.introduction(); // polymorphism
 }
 ```
 
@@ -1181,8 +1210,9 @@ function letMeIntroduce(obj){
 
 ```js
 var getHits = (function () {
-  var hits = 0;// initialized to 0
-  function addHits() { // lexical scope
+  var hits = 0; // initialized to 0
+  function addHits() {
+    // lexical scope
     hits++;
     return hits;
   }
@@ -1194,19 +1224,19 @@ var getHits = (function () {
 **[Module Pattern](https://levelup.gitconnected.com/data-hiding-with-javascript-module-pattern-62b71520bddd?gi=b0bd4624312e)** The Module Pattern is one of the important patterns in JavaScript. It is a commonly used Design Pattern which is used to wrap a set of variables and functions together in a single scope. It is used to define objects and specify the variables and the functions that can be accessed from outside the scope of the function. We expose certain properties and function as public and can also restrict the scope of properties and functions within the object itself, making them private. This means that those variables cannot be accessed outside the scope of the function. We can achieve data hiding an abstraction using this pattern in the JavaScript.
 
 ```js
-var empModule = (function(){
-var empList = [];
-return {
-  add:function(e){
-    empList.push(e);
-  },
-  show:function(){
-    for(var index in empList){
-      console.log(empList[index]);
-    }
-  }
-}
-})();// IIFE
+var empModule = (function () {
+  var empList = [];
+  return {
+    add: function (e) {
+      empList.push(e);
+    },
+    show: function () {
+      for (var index in empList) {
+        console.log(empList[index]);
+      }
+    },
+  };
+})(); // IIFE
 ```
 
 ### Old Way and New Way of Creating Class
@@ -1214,12 +1244,12 @@ return {
 **Old Way** Example
 
 ```js
-function personObj(id,name){
-  this.id=id;
-  this.name=name;
-  this.getData = function(){
+function personObj(id, name) {
+  this.id = id;
+  this.name = name;
+  this.getData = function () {
     return this.id + " " + this.name;
-  }
+  };
 }
 ```
 
@@ -1231,13 +1261,13 @@ class Car {
     this.carname = brand;
   }
   methodName() {
-      return;
+    return;
   }
   static staticMethodName() {
-      return;
+    return;
   }
   present() {
-    return 'I have a ' + this.carname;
+    return "I have a " + this.carname;
   }
   get cnam() {
     return this.carname;
@@ -1274,7 +1304,7 @@ Types of IO Operations (By default blocking, so in node they are asynchronous by
 - Module can be a single file or group of JS files
 - To import a module we use: var mymodule = require('mymodule'); consider mymodule.js is in same directory else have to specify the relative path
 - When you define any function in module file, the scope is private, so we have to export it using module.exports
-Ex. module.exports.fname = fname;
+  Ex. module.exports.fname = fname;
 - Every JS file is a module and every function defined is private by default
 
 Object Constructor is a function that initialize a object
@@ -1302,7 +1332,7 @@ Popular **NPM Packages**
 - WebServer
 - Chat Server, etc
 
-All Files Function in FS module have a Sync version of themselves. ***Sync Function will execute in blocking manner.***
+All Files Function in FS module have a Sync version of themselves. **_Sync Function will execute in blocking manner._**
 
 Streams:
 
@@ -1317,4 +1347,4 @@ Streams:
 - end - This event is fired when there is no more data to read
 - error - Fired when there is an error
 
-[![Visitors](https://api.visitorbadge.io/api/visitors?path=aasisodiya.nodejs&labelColor=%23ffa500&countColor=%23263759&labelStyle=upper)](https://visitorbadge.io/status?path=aasisodiya.nodejs)
+[![Visitors](https://api.visitorbadge.io/api/visitors?path=aasisodiya.nodejs&label=aasisodiya/nodejs&labelColor=%23ffa500&countColor=%23263759&labelStyle=upper)](https://visitorbadge.io/status?path=aasisodiya.nodejs)
