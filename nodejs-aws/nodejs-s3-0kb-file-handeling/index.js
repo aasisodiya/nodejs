@@ -1,15 +1,18 @@
 var AWS = require("aws-sdk");
 
-// Lambda code that will trigger on S3 file upload event and
+// This is a Lambda code, that will trigger when you
+// Upload any file to S3 i.e. file upload event and
 // will delete the respective file if its size is 0
-// Requirements----------------------------------------------
-// 1. Lambda Needs to be in the same region of the S3 Bucket
-// 2. Attach Role that allows lambda to make changes to S3
-// 3. Add Event Trigger on S3 File Upload to trigger this lambda
+// Some points to keep note of -----------------------------
+// 1. Lambda Needs to be in the same region as of that of S3 Bucket
+// 2. Attach Role that allows lambda to make changes to S3 Bucket
+// 3. Add Event Trigger on S3 File Upload to trigger below lambda
 
 exports.handler = async (event) => {
   console.log("Size of the uploaded file: " + event.Records[0].s3.object.size);
+  // Check if file size is 0
   if (event.Records[0].s3.object.size == 0) {
+    // Delete the file from S3 Bucket
     await deleteFile(
       event.Records[0].s3.bucket.name,
       event.Records[0].s3.object.key
@@ -55,27 +58,27 @@ async function deleteFile(bucketname, filename) {
 //                 "principalId": "AWS:AROA54HWSISCORPVJH5H:akash_sisodiya@siscorp.com"
 //             },
 //             "requestParameters": {
-//                 "sourceIPAddress": "125.18.33.122"
+//                 "sourceIPAddress": "x.y.z.a"
 //             },
 //             "responseElements": {
-//                 "x-amz-request-id": "DC92D0404021942E",
-//                 "x-amz-id-2": "rNCA2vh2BK4zwsIz40DZ9Vv0iToa8TmmB4NmjeAVufBbzZfovb0+5G9q91upFZBEh8WqvWJ9o/s="
+//                 "x-amz-request-id": "hsagsjahsnoasjioasuioa",
+//                 "x-amz-id-2": "hsagsjahsnoasjioasuioa+5G9q91upFZBEh8WqvWJ9o/s="
 //             },
 //             "s3": {
 //                 "s3SchemaVersion": "1.0",
-//                 "configurationId": "995d8294-9e7f-43a9-b1c7-bd9fd1d0e8e7",
+//                 "configurationId": "ybceriueniouiowxo-9e7f-43a9-b1c7-bd9fd1d0e8e7",
 //                 "bucket": {
 //                     "name": "mumbai-temp-bucket",
 //                     "ownerIdentity": {
-//                         "principalId": "A21HO0LS8Z8EI5"
+//                         "principalId": "ybceriueniouiowxo"
 //                     },
 //                     "arn": "arn:aws:s3:::mumbai-temp-bucket"
 //                 },
 //                 "object": {
 //                     "key": "one.txt",
 //                     "size": 1,
-//                     "eTag": "c4ca4238a0b923820dcc509a6f75849b",
-//                     "sequencer": "005E25547CE93EAE54"
+//                     "eTag": "ybceriueniouiowxo",
+//                     "sequencer": "ybceriueniouiowxo"
 //                 }
 //             }
 //         }
