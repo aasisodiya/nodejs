@@ -1,6 +1,6 @@
 # SES NodeJs Operations
 
-[![Visitors](https://api.visitorbadge.io/api/visitors?path=aasisodiya.nodejs.aws.s3&labelColor=%23ffa500&countColor=%23263759&labelStyle=upper)](https://visitorbadge.io/status?path=aasisodiya.nodejs.aws.ses)
+[![Visitors](https://api.visitorbadge.io/api/visitors?path=aasisodiya.nodejs.aws.ses&labelColor=%23ffa500&countColor=%23263759&labelStyle=upper)](https://visitorbadge.io/status?path=aasisodiya.nodejs.aws.ses)
 
 - [SES NodeJs Operations](#ses-nodejs-operations)
   - [AWS SES](#aws-ses)
