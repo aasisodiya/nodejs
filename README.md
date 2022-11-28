@@ -24,3 +24,4 @@
 |2022-08-09|[Sending basic email using SES](https://aasisodiya.github.io/nodejs/nodejs-aws/nodejs-aws-ses#sending-an-basic-email-with-ses)|
 |2022-08-21|[Sample code to make API calls](https://aasisodiya.github.io/nodejs/notes/api-calls#sample-code-to-make-api-calls)|
 |2022-11-22|[Sample code to handle 0kb file in S3](https://aasisodiya.github.io/nodejs/nodejs-aws/nodejs-s3-0kb-file-handeling)|
+|2022-11-28|[Complex Boolean Operations](https://aasisodiya.github.io/nodejs/notes/boolean-operations)|
