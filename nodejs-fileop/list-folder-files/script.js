@@ -1,18 +1,18 @@
 // Copyright (c) 2023 aasisodiya
 // All rights reserved.
-const fs = require('fs');
+const fs = require("fs");
 
 function listFilesAndFoldersRecursively(directoryPath) {
   fs.readdir(directoryPath, (err, files) => {
     if (err) {
-      console.error('Error reading directory:', err);
+      console.error("Error reading directory:", err);
       return;
     }
     files.forEach((file) => {
       const filePath = `${directoryPath}/${file}`;
       fs.stat(filePath, (err, stats) => {
         if (err) {
-          console.error('Error getting file stats:', err);
+          console.error("Error getting file stats:", err);
           return;
         }
 
@@ -28,5 +28,4 @@ function listFilesAndFoldersRecursively(directoryPath) {
 }
 
 // Usage: Provide the directory path as the argument
-listFilesAndFoldersRecursively('C:/Users/aasisodiya/Documents/GitHub/');
-// listFilesAndFoldersRecursively('C:/Users/akash/Documents/GitHub/3dprint/prints');
+listFilesAndFoldersRecursively("C:/Users/aasisodiya/Documents/GitHub/");
