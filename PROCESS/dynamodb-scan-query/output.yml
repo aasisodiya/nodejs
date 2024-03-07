@@ -1,0 +1,90 @@
+AWSTemplateFormatVersion: 2010-09-09
+Outputs:
+  ApiUrl:
+    Description: The URL of the API Gateway you invoke to save to your DynamoDB Table.
+    Value:
+      Fn::Sub: https://${SaveApi}.execute-api.${AWS::Region}.amazonaws.com/prod/save
+  DynamoDBTable:
+    Description: The name of your DynamoDB Table
+    Value:
+      Ref: TableName
+  DynamoDBTableStreamArn:
+    Description: The ARN of your DynamoDB Table Stream
+    Value:
+      Fn::GetAtt:
+      - DynamoDBTable
+      - StreamArn
+Parameters:
+  CorsOrigin:
+    Default: '''*'''
+    Description: (Optional) Cross-origin resource sharing (CORS) Origin. You can specify
+      a single origin, all "*" or leave empty and no CORS will be applied.
+    MaxLength: 250
+    Type: String
+  TableName:
+    AllowedPattern: ^[A-Za-z_]+$
+    ConstraintDescription: Required. Can be characters and underscore only. No numbers
+      or special characters allowed.
+    Description: (Required) The name of the new DynamoDB table you want to create
+      and save to. Minimum 3 characters
+    MaxLength: 50
+    MinLength: 3
+    Type: String
+Resources:
+  DynamoDBTable:
+    Properties:
+      AttributeDefinitions:
+      - AttributeName:
+          Fn::Sub: ${TableName}Id
+        AttributeType: S
+      BillingMode: PAY_PER_REQUEST
+      KeySchema:
+      - AttributeName:
+          Fn::Sub: ${TableName}Id
+        KeyType: HASH
+      SSESpecification:
+        SSEEnabled: true
+      StreamSpecification:
+        StreamViewType: NEW_IMAGE
+      TableName:
+        Ref: TableName
+    Type: AWS::DynamoDB::Table
+  LambdaSaver:
+    Properties:
+      CodeUri: s3://app-repo-components/9895749a7370c7f8c65137a100bb4a11
+      Environment:
+        Variables:
+          CORS_ORIGIN:
+            Ref: CorsOrigin
+          PRIMARY_KEY:
+            Fn::Sub: ${TableName}Id
+          TABLE_NAME:
+            Ref: TableName
+      Events:
+        SaveApi:
+          Properties:
+            Method: POST
+            Path: /save
+            RestApiId:
+              Ref: SaveApi
+          Type: Api
+      Handler: index.handler
+      Policies:
+      - DynamoDBCrudPolicy:
+          TableName:
+            Ref: TableName
+      Runtime: nodejs8.10
+    Type: AWS::Serverless::Function
+  SaveApi:
+    Properties:
+      Cors:
+        AllowHeaders: '''Content-Type,Authorization,X-Amz-Date,X-Api-Key,X-Amz-Security-Token'''
+        AllowMethods: '''OPTIONS,POST'''
+        AllowOrigin:
+          Ref: CorsOrigin
+        MaxAge: '''3600'''
+      EndpointConfiguration: REGIONAL
+      StageName: prod
+      TracingEnabled: true
+    Type: AWS::Serverless::Api
+Transform: AWS::Serverless-2016-10-31

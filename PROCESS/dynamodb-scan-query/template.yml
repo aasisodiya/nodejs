@@ -1,0 +1,72 @@
+AWSTemplateFormatVersion: 2010-09-09
+Transform: AWS::Serverless-2016-10-31
+Parameters:
+  TableName:
+    Type: String
+    Description: (Required) The name of the new DynamoDB table you want to create and save to. Minimum 3 characters
+    MinLength: 3
+    MaxLength: 50
+    AllowedPattern: ^[A-Za-z_]+$
+    ConstraintDescription: 'Required. Can be characters and underscore only. No numbers or special characters allowed.'
+  CorsOrigin:
+    Type: String
+    Default: "'*'"
+    Description: (Optional) Cross-origin resource sharing (CORS) Origin. You can specify a single origin, all "*" or leave empty and no CORS will be applied.
+    MaxLength: 250
+Resources:
+  SaveApi:
+    Type: AWS::Serverless::Api
+    Properties:
+      Cors:
+        AllowHeaders: "'Content-Type,Authorization,X-Amz-Date,X-Api-Key,X-Amz-Security-Token'"
+        AllowOrigin: !Ref CorsOrigin
+        MaxAge: "'3600'"
+        AllowMethods: "'OPTIONS,POST'"
+      EndpointConfiguration: REGIONAL
+      TracingEnabled: true
+      StageName: prod
+  LambdaSaver:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: index.handler
+      Runtime: nodejs8.10
+      Environment:
+        Variables:
+          TABLE_NAME: !Ref TableName
+          CORS_ORIGIN: !Ref CorsOrigin
+          PRIMARY_KEY: !Sub ${TableName}Id
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref TableName
+      Events:
+        SaveApi:
+          Type: Api
+          Properties:
+            Path: /save
+            Method: POST
+            RestApiId: !Ref SaveApi
+  DynamoDBTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: !Ref TableName
+      AttributeDefinitions:
+        - AttributeName: !Sub ${TableName}Id
+          AttributeType: S
+      KeySchema:
+        - AttributeName: !Sub ${TableName}Id
+          KeyType: HASH
+      BillingMode: PAY_PER_REQUEST
+      SSESpecification:
+        SSEEnabled: True
+      StreamSpecification:
+        StreamViewType: NEW_IMAGE
+Outputs:
+  ApiUrl:
+    Value: !Sub https://${SaveApi}.execute-api.${AWS::Region}.amazonaws.com/prod/save
+    Description: The URL of the API Gateway you invoke to save to your DynamoDB Table.
+  DynamoDBTable:
+    Value: !Ref TableName
+    Description: The name of your DynamoDB Table
+  DynamoDBTableStreamArn:
+    Value: !GetAtt DynamoDBTable.StreamArn
+    Description: The ARN of your DynamoDB Table Stream
