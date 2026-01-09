@@ -1,0 +1,15 @@
+{
+  "name": "screenshot-website",
+  "version": "1.0.0",
+  "description": "Script to capture screenshots of website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Akash Sisodiya",
+  "license": "ISC",
+  "dependencies": {
+    "capture-website": "^2.1.1",
+    "pageres": "^6.2.3"
+  }
+}

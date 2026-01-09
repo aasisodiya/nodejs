@@ -108,3 +108,7 @@ dist
 
 # Stores VSCode versions used for testing VSCode extensions
 .vscode-test
+nodejs-screenshot-website/*.png
+
+# My TODO list
+TODO
