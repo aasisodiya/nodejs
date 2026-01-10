@@ -8,6 +8,7 @@
     - [#counter-dilemma-solution](#counter-dilemma-solution)
     - [Old Way and New Way of Creating Class](#old-way-and-new-way-of-creating-class)
   - [NodeJS Related Points](#nodejs-related-points)
+  - [Deep Copy using `structuredClone()`](#deep-copy-using-structuredclone)
 
 ## JavaScript Notes
 
@@ -591,11 +592,11 @@ Math.max.apply(null, array);
 **splice()** - With clever parameter setting, you can use splice() to remove elements without leaving "holes" in the array
 
 **Syntax**: `array.splice(index, howmany, item1, ....., itemX)`
-|Parameter Values|Parameter Description|
-|-|-|
-|index|Required. An integer that specifies at what position to add/remove items, Use negative values to specify the position from the end of the array
-|howmany|Optional. The number of items to be removed. If set to 0, no items will be removed|
-|item1, ..., itemX|Optional. The new item(s) to be added to the array|
+| Parameter Values  | Parameter Description                                                                                                                           |
+| ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| index             | Required. An integer that specifies at what position to add/remove items, Use negative values to specify the position from the end of the array |
+| howmany           | Optional. The number of items to be removed. If set to 0, no items will be removed                                                              |
+| item1, ..., itemX | Optional. The new item(s) to be added to the array                                                                                              |
 
 ```js
 var fruits = ["Banana", "Orange", "Apple", "Mango"];
@@ -958,13 +959,13 @@ xhttp.send();
 By sending asynchronously, the JavaScript does not have to wait for the server response, but can instead execute other scripts while waiting for server response and deal with the response after the response is ready.
 
 readyState Holds the status of the XMLHttpRequest.
-|readyState|Description|
-|-|-|
-|0|request not initialized|
-|1|server connection established|
-|2|request received|
-|3|processing request|
-|4|request finished and response is ready|
+| readyState | Description                            |
+| ---------- | -------------------------------------- |
+| 0          | request not initialized                |
+| 1          | server connection established          |
+| 2          | request received                       |
+| 3          | processing request                     |
+| 4          | request finished and response is ready |
 
 With the XMLHttpRequest object you can define a function to be executed when the request receives an answer. The function is defined in the onreadystatechange property of the XMLHttpResponse object:
 
@@ -1346,5 +1347,46 @@ Streams:
 - data - This event is fired when there is data available to Readable
 - end - This event is fired when there is no more data to read
 - error - Fired when there is an error
+
+## Deep Copy using `structuredClone()`
+
+The `structuredClone()` method is a built-in JavaScript function that creates a deep copy of a given value using the structured clone algorithm. This means changes to the cloned object and its nested properties do not affect the original, unlike a shallow copy.
+
+```js
+const original = {
+  name: "MDN",
+  details: {
+    age: 30
+  },
+  date: new Date()
+};
+
+// Create a deep copy
+const clone = structuredClone(original);
+
+// Modify the clone
+clone.details.age = 31;
+clone.date.setFullYear(2025);
+
+// The original remains unchanged
+console.log(original.details.age); // Output: 30
+console.log(original.date.getFullYear()); // Output: 2024
+```
+
+Please note, this is deep copy. Do not confuse it with the following
+
+```js
+var copy = JSON.parse(JSON.stringify(original));
+```
+
+Above code creates a deep copy of an object if the object is completely serializable as JSON. However, it is a method with significant limitations for complex JavaScript objects
+
+```js
+var copy = {...original};
+```
+
+Then this will simply create only a shallow copy. It copies the top-level properties but any nested objects or arrays are still referenced, not duplicated
+
+---
 
 [![Visitors](https://api.visitorbadge.io/api/visitors?path=aasisodiya.nodejs&label=aasisodiya/nodejs&labelColor=%23ffa500&countColor=%23263759&labelStyle=upper)](https://visitorbadge.io/status?path=aasisodiya.nodejs)
